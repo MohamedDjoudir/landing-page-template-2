@@ -1,4 +1,3 @@
-import { ChevronRight } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { GradientBackdrop, SectionHeader } from "@/components";
 import { siteConfig } from "@/config";
@@ -32,7 +31,21 @@ export default function Integrations() {
             className="text-purple-400 hover:text-purple-300 font-medium inline-flex items-center"
           >
             {t("viewAll")}
-            <ChevronRight className="w-4 h-4 ms-1 rtl:rotate-180" />
+            <svg
+              className="w-4 h-4 ms-1 rtl:rotate-180"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M9 5l7 7-7 7"
+              />
+            </svg>
           </a>
         </div>
       </div>

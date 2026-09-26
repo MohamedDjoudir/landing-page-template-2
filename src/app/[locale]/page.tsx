@@ -13,7 +13,6 @@ import {
   Integrations,
   Faq,
   BlogPreview,
-  Newsletter,
   Cta,
 } from "@/features/home";
 import { routing } from "@/i18n";
@@ -41,7 +40,6 @@ export default async function LandingPage({ params }: LocaleParams) {
       <Integrations />
       <Faq />
       <BlogPreview />
-      <Newsletter />
       <Cta />
       <Footer />
     </div>

@@ -1,15 +1,22 @@
 "use client";
 
-import * as Accordion from "@radix-ui/react-accordion";
 import { faqs } from "../constants";
+import { useFaqAccordion } from "../hooks";
 import { FaqItem } from "./FaqItem";
 
 export function FaqList() {
+  const { activeIndex, toggle } = useFaqAccordion();
+
   return (
-    <Accordion.Root type="single" collapsible className="space-y-4">
-      {faqs.map((faq) => (
-        <FaqItem key={faq.id} faq={faq} />
+    <div className="space-y-4">
+      {faqs.map((faq, index) => (
+        <FaqItem
+          key={faq.id}
+          faq={faq}
+          isActive={activeIndex === index}
+          onToggle={() => toggle(index)}
+        />
       ))}
-    </Accordion.Root>
+    </div>
   );
 }

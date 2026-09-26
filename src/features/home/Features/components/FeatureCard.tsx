@@ -9,7 +9,7 @@ export function FeatureCard({ feature }: FeatureCardProps) {
   const t = useTranslations(`Features.items.${feature.id}`);
 
   return (
-    <div className="flex flex-col rounded-xl bg-gray-900/50 p-6 backdrop-blur-sm transition-all hover:bg-gray-800/50">
+    <div className="flex flex-col rounded-xl border border-gray-800 bg-gray-900/50 p-6 backdrop-blur-sm transition-all hover:border-purple-900/50 hover:bg-gray-800/50">
       <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-purple-600/20 text-purple-400">
         <feature.icon className="h-6 w-6" />
       </div>

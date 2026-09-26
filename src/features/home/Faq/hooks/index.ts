@@ -1,0 +1,1 @@
+export { useFaqAccordion } from "./useFaqAccordion";

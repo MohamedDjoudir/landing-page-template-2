@@ -14,15 +14,15 @@ export function ArticleCard({ article }: ArticleCardProps) {
 
   return (
     <Link href="#" className="group">
-      <div className="bg-gray-900 rounded-xl overflow-hidden transition-all duration-300 hover:bg-gray-800 hover:shadow-lg hover:shadow-purple-500/5">
+      <div className="bg-gray-900 border border-gray-800 rounded-xl overflow-hidden transition-all duration-300 hover:border-purple-500/30 hover:shadow-lg hover:shadow-purple-500/5">
         <div className="relative h-48 overflow-hidden">
           <Image
             src={article.image}
             alt={item("title")}
             fill
-            className="object-cover"
+            className="object-cover transition-transform duration-500 group-hover:scale-105"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent opacity-60 transition-opacity duration-500 group-hover:opacity-90" />
+          <div className="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent opacity-60" />
           <div className="absolute top-4 start-4 bg-purple-600/90 text-white text-xs font-medium px-2 py-1 rounded">
             {item("category")}
           </div>

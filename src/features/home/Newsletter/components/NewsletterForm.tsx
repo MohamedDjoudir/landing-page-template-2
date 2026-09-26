@@ -12,19 +12,26 @@ export function NewsletterForm() {
     useNewsletterForm();
 
   return (
-    <form onSubmit={onSubmit} noValidate className="flex flex-col gap-4 max-w-xl mx-auto">
-      <Input
-        type="email"
-        autoComplete="email"
-        label={t("email.label")}
-        placeholder={t("email.placeholder")}
-        required
-        icon={<Mail className="h-5 w-5" />}
-        error={errors.email?.message}
-        className="bg-gray-800/50 border-gray-700 focus:border-purple-500 text-white h-12 rounded-lg"
-        {...register("email")}
-      />
-      <div className="flex justify-end">
+    <>
+      <form
+        onSubmit={onSubmit}
+        noValidate
+        className="flex flex-col sm:flex-row gap-4 max-w-xl mx-auto"
+      >
+        <div className="relative flex-grow">
+          <div className="absolute inset-y-0 start-0 ps-3 flex items-center pointer-events-none">
+            <Mail className="h-5 w-5 text-gray-400" />
+          </div>
+          <Input
+            type="email"
+            autoComplete="email"
+            aria-label={t("email.label")}
+            aria-invalid={errors.email ? true : undefined}
+            placeholder={t("email.placeholder")}
+            className="ps-10 bg-gray-800/50 border-gray-700 focus:border-purple-500 text-white h-12 rounded-lg"
+            {...register("email")}
+          />
+        </div>
         <Button
           type="submit"
           disabled={isPending}
@@ -32,8 +39,12 @@ export function NewsletterForm() {
         >
           {t("submit")}
         </Button>
-      </div>
-      <NewsletterStatus isSuccess={isSuccess} isError={isError} />
-    </form>
+      </form>
+      <NewsletterStatus
+        message={errors.email?.message}
+        isSuccess={isSuccess}
+        isError={isError}
+      />
+    </>
   );
 }

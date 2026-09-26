@@ -13,7 +13,7 @@ export default function Cta() {
 
       <div className="container relative px-4 md:px-8">
         <div className="max-w-4xl mx-auto">
-          <div className="bg-gray-900/90 rounded-xl p-8 md:p-10 relative overflow-hidden shadow-lg">
+          <div className="bg-gray-900/90 border border-gray-800 rounded-xl p-8 md:p-10 relative overflow-hidden shadow-lg">
             <div className="absolute -top-32 -end-32 w-64 h-64 bg-gradient-to-br from-purple-600/20 to-pink-600/20 rounded-full blur-3xl" />
 
             <div className="absolute start-0 inset-y-0 w-1 bg-gradient-to-b from-purple-600 to-pink-600 rounded-full" />

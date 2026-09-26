@@ -15,8 +15,8 @@ export function CtaButton({ isInView }: CtaButtonProps) {
   return (
     <motion.div
       className="mt-20 text-center"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: isInView ? 1 : 0 }}
+      initial={{ opacity: 0, y: 30 }}
+      animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 30 }}
       transition={{ duration: 0.8, delay: 0.5 }}
     >
       <div className="relative inline-block">

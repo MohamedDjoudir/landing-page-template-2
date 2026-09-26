@@ -15,7 +15,7 @@ export function IntegrationCard({ integration }: IntegrationCardProps) {
 
   return (
     <motion.div className="group" variants={animationVariants.item}>
-      <div className="bg-gray-900 rounded-xl p-6 h-full flex flex-col items-center justify-center text-center transition-all duration-300 hover:bg-gray-800">
+      <div className="bg-gray-900 border border-gray-800 rounded-xl p-6 h-full flex flex-col items-center justify-center text-center transition-all duration-300 hover:border-purple-500/50 hover:bg-gray-800">
         <div className="relative mb-4 w-16 h-16 flex items-center justify-center">
           <div className="absolute inset-0 bg-gradient-to-r from-purple-600/20 to-pink-600/20 rounded-full blur-md group-hover:opacity-100 opacity-0 transition-opacity duration-300" />
           <div className="bg-gray-800 rounded-full p-2 w-12 h-12 flex items-center justify-center">

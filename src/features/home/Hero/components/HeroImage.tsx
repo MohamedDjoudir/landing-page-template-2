@@ -8,7 +8,7 @@ export function HeroImage() {
   return (
     <div className="mt-16 relative">
       <div className="absolute -inset-1 rounded-xl bg-gradient-to-r from-purple-600 to-pink-600 opacity-70 blur" />
-      <div className="relative rounded-xl bg-gray-900 shadow-2xl overflow-hidden">
+      <div className="relative rounded-xl border border-gray-800 bg-gray-900 shadow-2xl overflow-hidden">
         <Image
           src={heroImage.src}
           alt={t("imageAlt")}

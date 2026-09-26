@@ -17,8 +17,10 @@ export function PricingCard({ plan }: PricingCardProps) {
   return (
     <div
       className={cn(
-        "flex flex-col rounded-xl bg-gray-900/50 p-8 backdrop-blur-sm",
-        plan.popular && "relative ring-2 ring-inset ring-purple-600"
+        "flex flex-col rounded-xl border bg-gray-900/50 p-8 backdrop-blur-sm",
+        plan.popular
+          ? "border-2 border-purple-600 relative"
+          : "border-gray-800"
       )}
     >
       {plan.popular && (

@@ -12,7 +12,7 @@ export function MegaMenuFeatured({ menu }: MegaMenuFeaturedProps) {
   const t = useTranslations(`Header.menus.${menu.id}.featured`);
 
   return (
-    <div className="overflow-hidden rounded-lg bg-gray-900">
+    <div className="overflow-hidden rounded-lg border border-gray-800 bg-gray-900">
       <div className="relative h-40">
         <Image
           src={menu.featured.imageSrc}

@@ -13,7 +13,7 @@ export default function Newsletter() {
 
       <div className="container relative px-4 md:px-8">
         <div className="max-w-4xl mx-auto">
-          <div className="backdrop-blur-sm bg-gray-900/80 rounded-2xl p-8 md:p-12 relative overflow-hidden shadow-xl">
+          <div className="backdrop-blur-sm bg-gray-900/80 border border-gray-800 rounded-2xl p-8 md:p-12 relative overflow-hidden shadow-xl">
             <div className="absolute -top-24 -end-24 w-64 h-64 bg-purple-600/20 rounded-full blur-3xl" />
             <div className="absolute -bottom-24 -start-24 w-64 h-64 bg-pink-600/20 rounded-full blur-3xl" />
 

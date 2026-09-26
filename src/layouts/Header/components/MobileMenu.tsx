@@ -22,8 +22,8 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
         onClick={onClose}
       />
 
-      <div className="md:hidden fixed top-16 inset-x-0 z-50 animate-fade max-h-[85vh] overflow-y-auto">
-        <div className="mx-3 mt-2 rounded-xl bg-gradient-to-b from-[#1a1a2e] to-[#16161e] shadow-[0_10px_25px_-5px_rgba(0,0,0,0.3)]">
+      <div className="md:hidden fixed top-16 inset-x-0 z-50 animate-in slide-in-from-top duration-300 max-h-[85vh] overflow-y-auto">
+        <div className="mx-3 mt-2 rounded-xl border border-purple-900/30 bg-gradient-to-b from-[#1a1a2e] to-[#16161e] shadow-[0_10px_25px_-5px_rgba(0,0,0,0.3)]">
           <nav className="flex flex-col p-3">
             {mobileMenuSections.map((section) => (
               <MobileMenuSection
