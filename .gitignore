@@ -5,7 +5,6 @@ node_modules/
 .pnp.js
 
 # Lock files
-yarn.lock
 package-lock.json
 pnpm-lock.yaml
 
@@ -55,3 +54,6 @@ coverage/
 *.pem
 *.log
 .turbo
+
+# Yarn
+.yarn/

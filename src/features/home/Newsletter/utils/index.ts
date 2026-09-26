@@ -1,0 +1,1 @@
+export { createNewsletterSchema } from "./createNewsletterSchema";

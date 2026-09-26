@@ -1,0 +1,2 @@
+export const MEGA_MENU_CLOSE_DELAY_MS = 300;
+export const MEGA_MENU_ARROW_INSET_PX = 14;

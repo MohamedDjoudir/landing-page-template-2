@@ -1,4 +1,1 @@
-// API Services
-// Add your API service functions here
-
-export { }
+export * from "./newsletter";

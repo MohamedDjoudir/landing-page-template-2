@@ -1,24 +1,24 @@
-import { features } from "./config/features.config";
-import { FeatureCard } from "./components/FeatureCard";
+import { useTranslations } from "next-intl";
+import { GradientBackdrop, SectionHeader } from "@/components";
+import { FeatureCard } from "./components";
+import { features } from "./constants";
 
 export default function Features() {
+  const t = useTranslations("Features");
+
   return (
     <section id="features" className="relative py-20 md:py-32">
-      {/* Background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-b from-gray-950 via-gray-900 to-gray-950" />
+      <GradientBackdrop />
 
       <div className="container relative px-4 md:px-8">
-        <div className="mx-auto max-w-2xl text-center">
-          <h2 className="mb-4 text-3xl font-bold tracking-tight md:text-4xl">
-            Powerful Features
-          </h2>
-          <p className="mb-16 text-lg text-gray-400">
-            Everything you need to manage your business efficiently
-          </p>
-        </div>
+        <SectionHeader
+          size="narrow"
+          title={t("title")}
+          description={t("description")}
+        />
         <div className="grid gap-8 md:grid-cols-3">
-          {features.map((feature, index) => (
-            <FeatureCard key={index} feature={feature} />
+          {features.map((feature) => (
+            <FeatureCard key={feature.id} feature={feature} />
           ))}
         </div>
       </div>

@@ -1,354 +1,127 @@
 # SAASPRO – SaaS Landing Page Template
 
-**SAASPRO** is a modern and professional SaaS landing page template built with **Next.js 15**, **TypeScript**, and **Tailwind CSS**. Perfect for startups, SaaS products, and tech companies who want a clean, conversion-focused online presence.
+**SAASPRO** is a modern SaaS landing page template built with **Next.js 15**, **TypeScript** and **Tailwind CSS**, available in **English** and **Arabic** (right-to-left).
 
-🔗 **Live Demo & Details:** [aniq-ui.com SaaS Dashboard Template](https://www.aniq-ui.com/en/templates/saas-dashboard-nextjs-app-template)
-
----
-
-## 🚀 Getting Started
-
-### Prerequisites
-
-- Node.js 18.17 or later
-- npm, yarn, or pnpm
-
-### Installation
-
-1. **Clone the repository**
-
-   ```sh
-   git clone <repository-url>
-   cd landing-page-template-2
-   ```
-
-2. **Install dependencies**
-
-   ```sh
-   npm install
-   # or
-   yarn install
-   # or
-   pnpm install
-   ```
-
-3. **Start the development server**
-
-   ```sh
-   npm run dev
-   ```
-
-   Open [http://localhost:3000](http://localhost:3000) in your browser.
-
-4. **Build for production**
-
-   ```sh
-   npm run build
-   npm start
-   ```
+**Live Demo & Details:** [aniq-ui.com SaaS Dashboard Template](https://www.aniq-ui.com/en/templates/saas-dashboard-nextjs-app-template)
 
 ---
 
-## 🧠 Project Structure
+## Getting Started
 
-This project follows a **feature-based architecture** with modular, reusable components:
+Requires Node.js 18.17 or later and [Yarn](https://yarnpkg.com) (the repository pins Yarn 4 through `packageManager`; run `corepack enable` once).
+
+```sh
+yarn install
+cp .env.example .env.local
+yarn dev
+```
+
+The dev and start scripts serve on [http://localhost:3030](http://localhost:3030). Visiting `/` redirects to `/en`.
+
+| Script           | What it does                        |
+| ---------------- | ----------------------------------- |
+| `yarn dev`       | Development server on port 3030     |
+| `yarn build`     | Production build                    |
+| `yarn start`     | Serve the production build on 3030  |
+| `yarn typecheck` | Run the TypeScript compiler         |
+
+Every dependency is pinned to an exact version and `yarn.lock` is committed. Upgrade on purpose: edit the version, run `yarn install`, then verify the build.
+
+---
+
+## Environment variables
+
+| Variable                   | Purpose                                                                                                      |
+| -------------------------- | ------------------------------------------------------------------------------------------------------------ |
+| `NEXT_PUBLIC_API_BASE_URL` | Base URL of the API that receives newsletter sign-ups. The form posts `{ "email": string }` to `${NEXT_PUBLIC_API_BASE_URL}/newsletter/subscribe`. When it is empty the form shows its error message and sends nothing. |
+
+---
+
+## Languages
+
+Locales are `en` (default) and `ar`. Routes are prefixed with the locale (`/en`, `/ar`), and `<html lang dir>` follows it, so Arabic renders right-to-left.
+
+- `messages/en.json` and `messages/ar.json` hold every visible string, aria label, alt text and the page metadata. Both files must keep the same keys.
+- `src/i18n/` holds the routing (`routing.ts`), request config (`request.ts`), locale-aware navigation helpers and the text direction helper.
+- `src/middleware.ts` negotiates the locale.
+- Constants only carry keys, routes, icons and numbers. Components resolve the text with `useTranslations` from those keys.
+- Styling uses logical utilities (`ms-*`, `pe-*`, `start-*`, `text-start`, `rtl:rotate-180` on directional icons) so the layout mirrors in Arabic.
+
+To add a language, add it to `locales` in `src/i18n/routing.ts`, add `messages/<locale>.json`, and add its name under `LocaleSwitcher.names` in every messages file.
+
+---
+
+## Project structure
 
 ```
+messages/                 en.json, ar.json
 src/
-├── app/                    # Next.js App Router
-│   ├── layout.tsx          # Root layout with providers
-│   ├── page.tsx            # Home page
-│   └── globals.css         # Global styles
-│
-├── components/             # Shared/Reusable components
-│   ├── ui/                 # UI primitives (Button, Input, etc.)
-│   └── index.ts            # Component exports
-│
-├── config/                 # App configuration
-│   └── site.config.ts      # Site-wide settings (nav, footer, social links)
-│
-├── features/               # Page-specific features (organized by page)
-│   ├── index.ts            # Feature exports
-│   └── home/               # Home page features
-│       ├── Hero/
-│       │   ├── index.tsx
-│       │   ├── components/
-│       │   └── config/
-│       ├── SocialProof/
-│       ├── Features/
-│       ├── HowItWorks/
-│       ├── Testimonials/
-│       ├── Pricing/
-│       ├── ComparisonTable/
-│       ├── Integrations/
-│       ├── Faq/
-│       ├── BlogPreview/
-│       ├── Cta/
-│       └── Newsletter/
-│
-├── hooks/                  # Global custom hooks
-│   └── use-mobile.tsx      # Mobile detection hook
-│
-├── layouts/                # Layout components
-│   ├── Header/
-│   │   ├── index.tsx
-│   │   ├── components/     # DesktopNav, MobileMenu, Logo, HeaderActions
-│   │   └── config/         # mega-menu.config.tsx
-│   └── Footer/
-│       └── index.tsx
-│
-├── lib/                    # Utility functions
-│   └── utils.ts            # cn() helper for Tailwind classes
-│
-├── providers/              # React context providers
-│   └── theme-provider.tsx  # ThemeProvider setup
-│
-├── services/               # API services (future use)
-├── store/                  # State management (future use)
-├── styles/                 # Additional styles
-└── types/                  # TypeScript type definitions
-    └── index.ts
+├── app/[locale]/         layout.tsx (html, providers, metadata) and page.tsx (the page composition)
+├── components/           Shared UI: ui/, backgrounds/, Logo, SectionHeader, LocaleSwitcher
+├── config/               Site constants (name, URL, social links)
+├── features/home/        One folder per page section
+│   └── <Section>/        index.tsx, components/, constants/, types/, hooks/ and utils/ where needed
+├── hooks/                Shared hooks (one per file)
+├── i18n/                 next-intl routing, request config, navigation
+├── layouts/              Header and Footer, each with components/, hooks/, constants/, types/
+├── lib/
+│   ├── api/              The only place that calls an endpoint (fetch + URL)
+│   └── utils.ts          cn() helper
+├── providers/            Theme and TanStack Query providers
+├── services/             TanStack Query hooks and keys per domain, built on lib/api
+├── styles/               globals.css
+├── types/                Shared types (ApiResponse, route params)
+└── middleware.ts         Locale routing
 ```
+
+Conventions:
+
+- `page.tsx` composes sections; each section folder has an `index.tsx` and everything else in subfolders.
+- One component per file, one hook per file in `hooks/`, one helper per file in `utils/`. `index.ts` files only re-export.
+- Data flows `src/lib/api` (endpoint) -> `src/services` (TanStack Query hook) -> feature. Components never call `fetch` directly.
+- The newsletter form uses React Hook Form with a Zod schema built from translated messages.
+
+### Adding a section
+
+1. Create `src/features/home/<Section>/` with `index.tsx`, `components/` and `constants/`.
+2. Add its texts under a new namespace in both `messages/*.json` files and read them with `useTranslations`.
+3. Export it from `src/features/home/index.ts` and place it in `src/app/[locale]/page.tsx`.
 
 ---
 
-## 📄 Adding a New Page
+## Styling
 
-Follow these steps to add a new page (e.g., `/about`):
-
-### Step 1: Create the Page Route
-
-Create a new file in `src/app/`:
-
-```tsx
-// src/app/about/page.tsx
-import { AboutHero, AboutTeam, AboutValues } from "@/features/about";
-
-export default function AboutPage() {
-  return (
-    <main>
-      <AboutHero />
-      <AboutValues />
-      <AboutTeam />
-    </main>
-  );
-}
-```
-
-### Step 2: Create the Features Folder
-
-Create the feature folder structure:
-
-```
-src/features/about/
-├── index.ts              # Export all features
-├── AboutHero/
-│   ├── index.tsx         # Main component
-│   ├── components/       # Sub-components
-│   └── config/           # Feature-specific config/data
-├── AboutTeam/
-│   ├── index.tsx
-│   └── components/
-└── AboutValues/
-    └── index.tsx
-```
-
-### Step 3: Create a Feature Component
-
-Example feature component:
-
-```tsx
-// src/features/about/AboutHero/index.tsx
-import { heroConfig } from "./config/hero.config";
-import { HeroContent } from "./components/HeroContent";
-
-export default function AboutHero() {
-  return (
-    <section className="min-h-screen flex items-center justify-center">
-      <HeroContent />
-    </section>
-  );
-}
-```
-
-### Step 4: Export from Feature Index
-
-```tsx
-// src/features/about/index.ts
-export { default as AboutHero } from "./AboutHero";
-export { default as AboutTeam } from "./AboutTeam";
-export { default as AboutValues } from "./AboutValues";
-```
-
-### Step 5: Add to Main Features Export
-
-```tsx
-// src/features/index.ts
-// Home features
-export {
-  Hero,
-  SocialProof,
-  Features,
-  HowItWorks,
-  Testimonials,
-  Pricing,
-  ComparisonTable,
-  Integrations,
-  Faq,
-  BlogPreview,
-  Cta,
-  Newsletter,
-} from "./home";
-
-// About features
-export { AboutHero, AboutTeam, AboutValues } from "./about";
-```
-
-### Step 6: Update Navigation (Optional)
-
-Add the new page to `src/config/site.config.ts`:
-
-```tsx
-export const siteConfig = {
-  navLinks: [
-    { label: "Home", href: "/" },
-    { label: "About", href: "/about" }, // Add new link
-    // ...
-  ],
-};
-```
+Tailwind CSS with CSS variables for the theme tokens in `src/styles/globals.css` (light and dark, dark by default through `next-themes`). Cards and sections separate from the page by fill; borders are kept for inputs, dividers and outlined buttons. Hover states change colour rather than scale, and entrance animations only fade.
 
 ---
 
-## 🧩 Component Architecture
+## Tech Stack
 
-### UI Components (`src/components/ui/`)
-
-Reusable, stateless UI primitives:
-
-- `Button` - Styled button with variants
-- `Input` - Form input component
-
-### Feature Components
-
-Each feature follows this pattern with **separation of concerns**:
-
-```
-src/features/home/Hero/
-├── index.tsx           # Main export (composition only)
-├── components/         # UI sub-components
-│   ├── HeroContent.tsx
-│   ├── HeroImage.tsx
-│   └── GridPattern.tsx
-└── config/             # Data, constants, configurations
-    └── hero.config.ts
-```
-
-**Key Principles:**
-
-- **index.tsx** - Only composes sub-components, no business logic
-- **components/** - Reusable UI pieces specific to the feature
-- **config/** - Static data, text content, configuration objects
-
-### Layout Components
-
-```
-src/layouts/Header/
-├── index.tsx           # Main export
-├── components/         # Logo, DesktopNav, MobileMenu, HeaderActions, MegaMenu
-└── config/             # Navigation configuration
-    └── mega-menu.config.tsx
-```
+| Technology     | Purpose                            |
+| -------------- | ---------------------------------- |
+| Next.js 15     | React framework with App Router    |
+| TypeScript     | Type safety                        |
+| Tailwind CSS   | Utility-first styling              |
+| next-intl      | Internationalisation and routing   |
+| TanStack Query | Server requests (newsletter)       |
+| React Hook Form + Zod | Forms and validation        |
+| Framer Motion  | Animations                         |
+| Radix UI       | Accordion and slot primitives      |
+| Lucide React   | Icons                              |
+| next-themes    | Theme management                   |
 
 ---
 
-## 🎨 Styling
-
-- **Tailwind CSS** - Utility-first CSS framework
-- **CSS Variables** - Theme colors defined in `globals.css`
-- **Dark Mode** - Supported via `next-themes`
-- **Custom Utilities** - `cn()` helper for conditional classes
-
-```tsx
-import { cn } from "@/lib/utils";
-
-<div className={cn("base-class", isActive && "active-class")} />;
-```
-
----
-
-## 🔧 Configuration
-
-### Site Config (`src/config/site.config.ts`)
-
-Centralized configuration for:
-
-- Navigation links
-- Footer links
-- Social media links
-- Site metadata
-
-### TypeScript Paths
-
-Path aliases configured in `tsconfig.json`:
-
-```json
-{
-  "compilerOptions": {
-    "paths": {
-      "@/*": ["./src/*"]
-    }
-  }
-}
-```
-
-Usage:
-
-```tsx
-import { Button } from "@/components/ui/button";
-import { Hero } from "@/features/home/Hero";
-import { cn } from "@/lib/utils";
-```
-
----
-
-## 🌟 Features
-
-- ✨ **Next.js 15** with App Router
-- 📝 **TypeScript** for type safety
-- 🎨 **Tailwind CSS** for styling
-- 🎭 **Framer Motion** for animations
-- 🌙 **Dark Mode** support
-- 📱 **Fully Responsive** design
-- 🧩 **Feature-based Architecture** for scalability
-- 🔄 **Separation of Concerns** (components, config, hooks)
-
----
-
-## 📦 Tech Stack
-
-| Technology    | Purpose                         |
-| ------------- | ------------------------------- |
-| Next.js 15    | React framework with App Router |
-| TypeScript    | Type safety                     |
-| Tailwind CSS  | Utility-first styling           |
-| Framer Motion | Animations                      |
-| Lucide React  | Icons                           |
-| next-themes   | Theme management                |
-| Radix UI      | Accessible UI primitives        |
-
----
-
-## 💬 Support
+## Support
 
 For questions or support, contact the [Aniq UI team](https://www.aniq-ui.com/#contact).
 
 ---
 
-## 📝 License
+## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ---
 
-Created by [Aniq UI](https://www.aniq-ui.com) — Premium Next.js Templates for modern web apps.
+Created by [Aniq UI](https://www.aniq-ui.com), premium Next.js templates for modern web apps.

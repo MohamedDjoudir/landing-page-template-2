@@ -1,0 +1,1 @@
+export { getArrowTranslateX } from "./getArrowTranslateX";

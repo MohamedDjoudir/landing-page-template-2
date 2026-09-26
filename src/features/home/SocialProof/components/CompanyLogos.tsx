@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { companies, animationVariants } from "../config/social-proof.config";
+import { animationVariants, companies } from "../constants";
 
 export function CompanyLogos() {
   return (
@@ -13,15 +13,15 @@ export function CompanyLogos() {
       whileInView="visible"
       viewport={{ once: true, margin: "-100px" }}
     >
-      {companies.map((company, index) => (
+      {companies.map((company) => (
         <motion.div
-          key={index}
+          key={company.name}
           className="transition-all duration-300"
           variants={animationVariants.item}
         >
           <div className="bg-gray-800 rounded-lg p-4 w-[80px] h-[40px] flex items-center justify-center">
             <Image
-              src={company.logo || "/placeholder.svg"}
+              src={company.logo}
               alt={company.name}
               width={50}
               height={40}

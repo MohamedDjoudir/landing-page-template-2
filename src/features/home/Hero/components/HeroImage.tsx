@@ -1,16 +1,19 @@
 import Image from "next/image";
-import { heroConfig } from "../config/hero.config";
+import { useTranslations } from "next-intl";
+import { heroImage } from "../constants";
 
 export function HeroImage() {
+  const t = useTranslations("Hero");
+
   return (
     <div className="mt-16 relative">
       <div className="absolute -inset-1 rounded-xl bg-gradient-to-r from-purple-600 to-pink-600 opacity-70 blur" />
-      <div className="relative rounded-xl border border-gray-800 bg-gray-900 shadow-2xl overflow-hidden">
+      <div className="relative rounded-xl bg-gray-900 shadow-2xl overflow-hidden">
         <Image
-          src={heroConfig.image.src}
-          alt={heroConfig.image.alt}
-          width={1200}
-          height={675}
+          src={heroImage.src}
+          alt={t("imageAlt")}
+          width={heroImage.width}
+          height={heroImage.height}
           className="w-full h-auto opacity-90"
           priority
         />

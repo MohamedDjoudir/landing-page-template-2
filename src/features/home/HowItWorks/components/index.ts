@@ -1,4 +1,5 @@
 export { StepCard } from "./StepCard";
-export { SectionHeader } from "./SectionHeader";
-export { FloatingParticles, GridOverlay } from "./BackgroundElements";
+export { HowItWorksHeader } from "./HowItWorksHeader";
+export { FloatingParticles } from "./FloatingParticles";
+export { GridOverlay } from "./GridOverlay";
 export { CtaButton } from "./CtaButton";

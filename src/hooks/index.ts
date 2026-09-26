@@ -1,1 +1,2 @@
-export { useIsMobile } from "./use-mobile"
+export { useIsMobile } from "./useIsMobile";
+export { usePriceFormatter } from "./usePriceFormatter";

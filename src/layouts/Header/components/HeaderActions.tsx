@@ -1,29 +1,40 @@
-import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
+import Link from "next/link";
+import { useTranslations } from "next-intl";
+import { LocaleSwitcher } from "@/components";
+import { Button } from "@/components/ui";
 
 interface HeaderActionsProps {
   isMenuOpen: boolean;
-  setIsMenuOpen: (v: boolean) => void;
+  onToggleMenu: () => void;
 }
 
-export default function HeaderActions({
+export function HeaderActions({
   isMenuOpen,
-  setIsMenuOpen,
+  onToggleMenu,
 }: HeaderActionsProps) {
+  const t = useTranslations("Header");
+  const common = useTranslations("Common");
+
   return (
     <div className="flex items-center gap-4">
-      <div className="hidden md:block text-sm font-medium text-gray-300 hover:text-white px-2 py-1 rounded hover:bg-gray-900 transition">
-        Log in
-      </div>
+      <Link
+        href="#"
+        className="hidden md:block text-sm font-medium text-gray-300 hover:text-white px-2 py-1 rounded hover:bg-gray-900 transition"
+      >
+        {t("login")}
+      </Link>
+      <LocaleSwitcher />
       <Button className="bg-gradient-to-r from-purple-600 to-pink-500 text-white hover:from-purple-700 hover:to-pink-600 shadow-md">
-        Get Started
+        {common("getStarted")}
       </Button>
       <Button
         variant="ghost"
         size="icon"
         className="md:hidden text-gray-300"
-        onClick={() => setIsMenuOpen(!isMenuOpen)}
-        aria-label="Toggle menu"
+        onClick={onToggleMenu}
+        aria-label={t("toggleMenu")}
+        aria-expanded={isMenuOpen}
       >
         {isMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
       </Button>

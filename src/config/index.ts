@@ -1,1 +1,1 @@
-export { siteConfig, navigationConfig, pricingConfig, comparisonConfig } from "./site.config"
+export { siteConfig } from "./site";

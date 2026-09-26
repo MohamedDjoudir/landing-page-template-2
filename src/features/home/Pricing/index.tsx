@@ -1,24 +1,24 @@
-import { plans } from "./config/plans.config";
-import { PricingCard } from "./components/PricingCard";
-import { BackgroundPattern } from "./components/BackgroundPattern";
+import { useTranslations } from "next-intl";
+import { DotPattern, SectionHeader } from "@/components";
+import { PricingCard } from "./components";
+import { plans } from "./constants";
 
 export default function Pricing() {
+  const t = useTranslations("Pricing");
+
   return (
     <section id="pricing" className="relative py-20 md:py-32">
-      <BackgroundPattern />
+      <DotPattern />
 
       <div className="container relative px-4 md:px-8">
-        <div className="mx-auto max-w-2xl text-center">
-          <h2 className="mb-4 text-3xl font-bold tracking-tight md:text-4xl">
-            Simple, Transparent Pricing
-          </h2>
-          <p className="mb-16 text-lg text-gray-400">
-            Choose the plan that works best for your business
-          </p>
-        </div>
+        <SectionHeader
+          size="narrow"
+          title={t("title")}
+          description={t("description")}
+        />
         <div className="grid gap-8 md:grid-cols-3">
-          {plans.map((plan, index) => (
-            <PricingCard key={index} plan={plan} />
+          {plans.map((plan) => (
+            <PricingCard key={plan.id} plan={plan} />
           ))}
         </div>
       </div>

@@ -1,0 +1,1 @@
+export { useSubscribeNewsletter } from "./useSubscribeNewsletter";

@@ -1,0 +1,434 @@
+{
+  "Metadata": {
+    "title": "SaasPro - Modern SaaS Platform",
+    "description": "Streamline your workflow with our powerful SaaS solution",
+    "imageAlt": "SaasPro"
+  },
+  "Common": {
+    "getStarted": "Get Started",
+    "mostPopular": "Most Popular",
+    "perMonth": "/month"
+  },
+  "LocaleSwitcher": {
+    "switchTo": "Switch language to {language}",
+    "names": {
+      "en": "English",
+      "ar": "العربية"
+    }
+  },
+  "Header": {
+    "nav": {
+      "products": "Products",
+      "resources": "Resources",
+      "features": "Features",
+      "pricing": "Pricing",
+      "testimonials": "Testimonials"
+    },
+    "login": "Log in",
+    "toggleMenu": "Toggle menu",
+    "menus": {
+      "products": {
+        "columns": {
+          "core": {
+            "title": "Core Platform",
+            "items": {
+              "dashboard": {
+                "title": "Dashboard",
+                "description": "Complete overview of your business"
+              },
+              "team": {
+                "title": "Team Management",
+                "description": "Organize and manage your team"
+              },
+              "analytics": {
+                "title": "Analytics",
+                "description": "Insights and data visualization"
+              }
+            }
+          },
+          "addons": {
+            "title": "Add-ons",
+            "items": {
+              "automation": {
+                "title": "Automation",
+                "description": "Streamline your workflows"
+              },
+              "integrations": {
+                "title": "Integrations",
+                "description": "Connect with other tools"
+              },
+              "reports": {
+                "title": "Reports",
+                "description": "Generate detailed reports"
+              }
+            }
+          }
+        },
+        "featured": {
+          "title": "New Feature",
+          "description": "Try our new AI-powered analytics dashboard",
+          "cta": "Learn More"
+        }
+      },
+      "resources": {
+        "columns": {
+          "support": {
+            "title": "Help & Support",
+            "items": {
+              "documentation": {
+                "title": "Documentation",
+                "description": "Guides and references"
+              },
+              "knowledgeBase": {
+                "title": "Knowledge Base",
+                "description": "Answers to common questions"
+              },
+              "community": {
+                "title": "Community Forum",
+                "description": "Connect with other users"
+              }
+            }
+          },
+          "learning": {
+            "title": "Learning",
+            "items": {
+              "tutorials": {
+                "title": "Tutorials",
+                "description": "Step-by-step guides"
+              },
+              "webinars": {
+                "title": "Webinars",
+                "description": "Live and recorded sessions"
+              },
+              "blog": {
+                "title": "Blog",
+                "description": "Latest news and tips"
+              }
+            }
+          }
+        },
+        "featured": {
+          "title": "Latest Webinar",
+          "description": "Maximizing Productivity with SaasPro",
+          "cta": "Watch Now"
+        }
+      }
+    },
+    "mobile": {
+      "products": {
+        "dashboard": { "title": "Dashboard", "description": "Complete overview" },
+        "team": { "title": "Team Management", "description": "Manage your team" },
+        "analytics": { "title": "Analytics", "description": "Data visualization" }
+      },
+      "resources": {
+        "documentation": { "title": "Documentation", "description": "Guides and references" },
+        "tutorials": { "title": "Tutorials", "description": "Step-by-step guides" },
+        "blog": { "title": "Blog", "description": "Latest news and tips" }
+      }
+    }
+  },
+  "Footer": {
+    "tagline": "Empowering businesses with powerful software solutions since 2023.",
+    "copyright": "© {year} {brand}. All rights reserved.",
+    "columns": {
+      "product": {
+        "title": "Product",
+        "links": {
+          "features": "Features",
+          "pricing": "Pricing",
+          "integrations": "Integrations",
+          "roadmap": "Roadmap"
+        }
+      },
+      "company": {
+        "title": "Company",
+        "links": {
+          "about": "About",
+          "blog": "Blog",
+          "careers": "Careers",
+          "contact": "Contact"
+        }
+      },
+      "legal": {
+        "title": "Legal",
+        "links": {
+          "privacy": "Privacy Policy",
+          "terms": "Terms of Service",
+          "cookies": "Cookie Policy"
+        }
+      }
+    },
+    "social": {
+      "twitter": "Twitter",
+      "facebook": "Facebook",
+      "instagram": "Instagram",
+      "linkedin": "LinkedIn",
+      "github": "GitHub"
+    }
+  },
+  "Hero": {
+    "badge": {
+      "label": "New:",
+      "text": "Our platform just got a major upgrade"
+    },
+    "headline": "Streamline Your Workflow with Our SaaS Solution",
+    "description": "Boost productivity and simplify operations with our powerful, easy-to-use platform.",
+    "primaryCta": "Start Free Trial",
+    "secondaryCta": "Book a Demo",
+    "imageAlt": "Dashboard Preview"
+  },
+  "SocialProof": {
+    "eyebrow": "Trusted by professionals from top brands",
+    "title": "Join thousands of satisfied customers",
+    "stats": {
+      "users": { "value": "10k+", "label": "Active Users" },
+      "clients": { "value": "500+", "label": "Enterprise Clients" },
+      "uptime": { "value": "99.9%", "label": "Uptime" },
+      "support": { "value": "24/7", "label": "Support" }
+    }
+  },
+  "Features": {
+    "title": "Powerful Features",
+    "description": "Everything you need to manage your business efficiently",
+    "items": {
+      "dashboard": {
+        "title": "Intuitive Dashboard",
+        "description": "Get a complete overview of your business with our easy-to-use dashboard."
+      },
+      "analytics": {
+        "title": "Advanced Analytics",
+        "description": "Make data-driven decisions with comprehensive analytics and reporting."
+      },
+      "collaboration": {
+        "title": "Team Collaboration",
+        "description": "Work seamlessly with your team members in real-time."
+      },
+      "automation": {
+        "title": "Automation Tools",
+        "description": "Save time by automating repetitive tasks and workflows."
+      },
+      "storage": {
+        "title": "Secure Storage",
+        "description": "Keep your data safe with enterprise-grade security measures."
+      },
+      "support": {
+        "title": "24/7 Support",
+        "description": "Get help whenever you need it with our dedicated support team."
+      }
+    }
+  },
+  "HowItWorks": {
+    "eyebrow": "Effortless Integration",
+    "title": "How {brand} <highlight>Transforms</highlight> Your Workflow",
+    "description": "A seamless four-step process that revolutionizes the way your team works",
+    "steps": {
+      "signUp": {
+        "title": "Sign Up",
+        "description": "Create your account in seconds. No credit card required for the free trial."
+      },
+      "configure": {
+        "title": "Configure",
+        "description": "Set up your workspace and invite your team members to collaborate."
+      },
+      "importData": {
+        "title": "Import Data",
+        "description": "Easily import your existing data or start fresh with our templates."
+      },
+      "startWorking": {
+        "title": "Start Working",
+        "description": "Begin using the platform to streamline your workflow and boost productivity."
+      }
+    },
+    "step": {
+      "keyFeature": "Key feature #{number} for this step",
+      "learnMore": "Learn more about this step"
+    },
+    "cta": "Transform Your Workflow",
+    "ctaNote": "Join thousands of teams already using {brand}"
+  },
+  "Testimonials": {
+    "title": "What Our Customers Say",
+    "description": "Don't just take our word for it - hear from some of our satisfied customers",
+    "items": {
+      "sarah": {
+        "quote": "This platform has completely transformed how we manage our projects. The interface is intuitive and the features are exactly what we needed.",
+        "author": "Sarah Johnson",
+        "role": "Product Manager, TechCorp"
+      },
+      "michael": {
+        "quote": "We've seen a 40% increase in productivity since implementing this solution. The automation features alone have saved us countless hours.",
+        "author": "Michael Chen",
+        "role": "CTO, GrowthStartup"
+      },
+      "emily": {
+        "quote": "The customer support is exceptional. Whenever we've had questions, the team has been quick to respond and incredibly helpful.",
+        "author": "Emily Rodriguez",
+        "role": "Operations Director, ScaleUp Inc"
+      }
+    }
+  },
+  "Pricing": {
+    "title": "Simple, Transparent Pricing",
+    "description": "Choose the plan that works best for your business",
+    "plans": {
+      "starter": {
+        "name": "Starter",
+        "description": "Perfect for small businesses and startups",
+        "features": {
+          "team": "5 Team Members",
+          "storage": "10GB Storage",
+          "analytics": "Basic Analytics",
+          "support": "Email Support"
+        }
+      },
+      "professional": {
+        "name": "Professional",
+        "description": "Ideal for growing businesses",
+        "features": {
+          "team": "15 Team Members",
+          "storage": "50GB Storage",
+          "analytics": "Advanced Analytics",
+          "support": "Priority Support",
+          "api": "API Access",
+          "integrations": "Custom Integrations"
+        }
+      },
+      "enterprise": {
+        "name": "Enterprise",
+        "description": "For large organizations with complex needs",
+        "features": {
+          "team": "Unlimited Team Members",
+          "storage": "500GB Storage",
+          "analytics": "Enterprise Analytics",
+          "support": "24/7 Dedicated Support",
+          "security": "Advanced Security",
+          "development": "Custom Development",
+          "onboarding": "Onboarding Assistance"
+        }
+      }
+    }
+  },
+  "Comparison": {
+    "eyebrow": "Plan Comparison",
+    "title": "Find the Perfect Plan",
+    "description": "Compare our plans to find the one that best suits your needs. All plans include our core features.",
+    "perMonthShort": "/mo",
+    "included": "Included",
+    "notIncluded": "Not included",
+    "tiers": {
+      "basic": { "name": "Basic", "description": "For small teams", "cta": "Get Started" },
+      "pro": { "name": "Professional", "description": "For growing businesses", "cta": "Get Started" },
+      "enterprise": { "name": "Enterprise", "description": "For large organizations", "cta": "Contact Sales" }
+    },
+    "features": {
+      "core": "Core Features",
+      "projects": "Unlimited Projects",
+      "api": "API Access",
+      "analytics": "Advanced Analytics",
+      "integrations": "Custom Integrations",
+      "support": "Dedicated Support",
+      "sla": "SLA Guarantee"
+    }
+  },
+  "Integrations": {
+    "eyebrow": "Seamless Connections",
+    "title": "Integrate with Your Favorite Tools",
+    "description": "{brand} connects with the tools you already use, making it easy to incorporate into your existing workflow.",
+    "more": "...and many more integrations available",
+    "viewAll": "View all integrations",
+    "categories": {
+      "communication": "Communication",
+      "development": "Development",
+      "productivity": "Productivity",
+      "workspace": "Workspace",
+      "design": "Design",
+      "crm": "CRM",
+      "automation": "Automation",
+      "payments": "Payments",
+      "marketing": "Marketing",
+      "meetings": "Meetings"
+    }
+  },
+  "Faq": {
+    "eyebrow": "Questions & Answers",
+    "title": "Frequently Asked Questions",
+    "description": "Find answers to common questions about {brand}. If you can't find what you're looking for, feel free to contact our support team.",
+    "stillQuestions": "Still have questions?",
+    "contactSupport": "Contact our support team",
+    "items": {
+      "trial": {
+        "question": "How does the free trial work?",
+        "answer": "Our free trial gives you full access to all features for 14 days. No credit card required. At the end of the trial, you can choose the plan that best suits your needs or continue with the free plan with limited features."
+      },
+      "changePlan": {
+        "question": "Can I change my plan later?",
+        "answer": "Yes, you can upgrade or downgrade your plan at any time. If you upgrade, the new rate will be charged immediately. If you downgrade, the new rate will be applied at the next billing cycle."
+      },
+      "payment": {
+        "question": "What payment methods do you accept?",
+        "answer": "We accept all major credit cards including Visa, Mastercard, and American Express. We also support payment via PayPal and bank transfers for annual enterprise plans."
+      },
+      "security": {
+        "question": "Is my data secure?",
+        "answer": "Yes, we take security very seriously. All data is encrypted both in transit and at rest. We use industry-standard security practices and regularly undergo security audits to ensure your data is protected."
+      },
+      "cancel": {
+        "question": "Can I cancel my subscription?",
+        "answer": "Yes, you can cancel your subscription at any time from your account settings. Once canceled, you'll still have access to your plan until the end of your current billing period."
+      },
+      "discounts": {
+        "question": "Do you offer discounts for non-profits or educational institutions?",
+        "answer": "Yes, we offer special pricing for non-profit organizations, educational institutions, and startups. Please contact our sales team for more information."
+      }
+    }
+  },
+  "Blog": {
+    "eyebrow": "Latest Articles",
+    "title": "From Our Blog",
+    "viewAll": "View all articles",
+    "readTime": "{minutes} min read",
+    "articles": {
+      "productivity": {
+        "title": "10 Ways to Boost Your Team's Productivity",
+        "excerpt": "Discover proven strategies to enhance your team's efficiency and output without burning out.",
+        "category": "Productivity"
+      },
+      "remoteWork": {
+        "title": "The Future of Remote Work: Trends to Watch",
+        "excerpt": "Explore emerging trends that are shaping how teams collaborate and work together remotely.",
+        "category": "Remote Work"
+      },
+      "dataCulture": {
+        "title": "Building a Data-Driven Culture in Your Organization",
+        "excerpt": "Learn how to foster a culture where decisions are backed by data and insights.",
+        "category": "Analytics"
+      }
+    }
+  },
+  "Cta": {
+    "headline": "Ready to transform your business?",
+    "description": "Join thousands of companies already using our platform.",
+    "features": {
+      "noCard": "No credit card required",
+      "trial": "14-day free trial",
+      "cancel": "Cancel anytime"
+    }
+  },
+  "Newsletter": {
+    "badge": "Newsletter",
+    "headline": "Stay Updated with {brand}",
+    "description": "Subscribe to our newsletter for the latest updates, tips, and exclusive offers delivered directly to your inbox.",
+    "disclaimer": "By subscribing, you agree to our Privacy Policy and consent to receive updates.",
+    "form": {
+      "email": {
+        "label": "Email address",
+        "placeholder": "Enter your email address",
+        "required": "Enter your email address",
+        "invalid": "Enter a valid email address"
+      },
+      "submit": "Subscribe Now",
+      "success": "Thanks for subscribing. Check your inbox to confirm.",
+      "error": "We could not subscribe you right now. Please try again later."
+    }
+  }
+}
