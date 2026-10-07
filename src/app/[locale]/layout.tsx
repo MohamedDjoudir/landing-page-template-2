@@ -25,6 +25,12 @@ export async function generateMetadata({
     title: t("title"),
     description: t("description"),
     generator: siteConfig.creator,
+    alternates: {
+      canonical: `/${locale}`,
+      languages: Object.fromEntries(
+        routing.locales.map((code) => [code, `/${code}`])
+      ),
+    },
     openGraph: {
       title: t("title"),
       description: t("description"),
@@ -37,6 +43,7 @@ export async function generateMetadata({
         },
       ],
       type: "website",
+      url: `/${locale}`,
       siteName: siteConfig.name,
     },
     twitter: {

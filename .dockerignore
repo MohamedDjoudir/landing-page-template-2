@@ -1,0 +1,14 @@
+# Kept out of the image build: installs, build output, secrets.
+node_modules/
+.next/
+.yarn/
+.env
+.env.*
+!.env.example
+*.tsbuildinfo
+*.log
+.DS_Store
+.git/
+.claude/
+CLAUDE.md
+AGENTS.md

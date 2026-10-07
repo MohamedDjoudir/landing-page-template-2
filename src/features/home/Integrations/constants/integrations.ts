@@ -1,14 +1,14 @@
 import type { Integration } from "../types";
 
 export const integrations: Integration[] = [
-  { name: "Slack", categoryId: "communication", logo: "https://cdn.simpleicons.org/slack" },
-  { name: "GitHub", categoryId: "development", logo: "https://cdn.simpleicons.org/github" },
-  { name: "Notion", categoryId: "productivity", logo: "https://cdn.simpleicons.org/notion" },
-  { name: "Google", categoryId: "workspace", logo: "https://cdn.simpleicons.org/google" },
-  { name: "Figma", categoryId: "design", logo: "https://cdn.simpleicons.org/figma" },
-  { name: "Salesforce", categoryId: "crm", logo: "https://cdn.simpleicons.org/salesforce" },
-  { name: "Zapier", categoryId: "automation", logo: "https://cdn.simpleicons.org/zapier" },
-  { name: "Stripe", categoryId: "payments", logo: "https://cdn.simpleicons.org/stripe" },
-  { name: "Hubspot", categoryId: "marketing", logo: "https://cdn.simpleicons.org/hubspot" },
-  { name: "Zoom", categoryId: "meetings", logo: "https://cdn.simpleicons.org/zoom" },
+  { name: "Slack", categoryId: "communication", logo: "/images/logos/slack.svg" },
+  { name: "GitHub", categoryId: "development", logo: "/images/logos/github.svg" },
+  { name: "Notion", categoryId: "productivity", logo: "/images/logos/notion.svg" },
+  { name: "Google", categoryId: "workspace", logo: "/images/logos/google.svg" },
+  { name: "Figma", categoryId: "design", logo: "/images/logos/figma.svg" },
+  { name: "Salesforce", categoryId: "crm", logo: "/images/logos/salesforce.svg" },
+  { name: "Zapier", categoryId: "automation", logo: "/images/logos/zapier.svg" },
+  { name: "Stripe", categoryId: "payments", logo: "/images/logos/stripe.svg" },
+  { name: "Hubspot", categoryId: "marketing", logo: "/images/logos/hubspot.svg" },
+  { name: "Zoom", categoryId: "meetings", logo: "/images/logos/zoom.svg" },
 ];

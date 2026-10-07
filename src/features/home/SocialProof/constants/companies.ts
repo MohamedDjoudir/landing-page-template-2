@@ -1,10 +1,10 @@
 import type { Company } from "../types";
 
 export const companies: Company[] = [
-  { name: "Slack", logo: "https://cdn.simpleicons.org/slack" },
-  { name: "Shopify", logo: "https://cdn.simpleicons.org/shopify" },
-  { name: "Stripe", logo: "https://cdn.simpleicons.org/stripe" },
-  { name: "Notion", logo: "https://cdn.simpleicons.org/notion" },
-  { name: "Figma", logo: "https://cdn.simpleicons.org/figma" },
-  { name: "Trello", logo: "https://cdn.simpleicons.org/trello" },
+  { name: "Slack", logo: "/images/logos/slack.svg" },
+  { name: "Shopify", logo: "/images/logos/shopify.svg" },
+  { name: "Stripe", logo: "/images/logos/stripe.svg" },
+  { name: "Notion", logo: "/images/logos/notion.svg" },
+  { name: "Figma", logo: "/images/logos/figma.svg" },
+  { name: "Trello", logo: "/images/logos/trello.svg" },
 ];
