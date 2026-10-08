@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useTranslations } from "next-intl";
+import { siteConfig } from "@/config";
 import { Button } from "@/components/ui";
 import type { MegaMenuData } from "../types";
 
@@ -24,7 +25,7 @@ export function MegaMenuFeatured({ menu }: MegaMenuFeaturedProps) {
       </div>
       <div className="p-4">
         <h3 className="mb-1 font-medium text-white">{t("title")}</h3>
-        <p className="mb-4 text-sm text-gray-400">{t("description")}</p>
+        <p className="mb-4 text-sm text-gray-400">{t("description", { brand: siteConfig.name })}</p>
         <Button
           asChild
           variant="outline"

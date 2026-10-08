@@ -1,8 +1,8 @@
 {
   "Metadata": {
-    "title": "SaasPro - منصة SaaS عصرية",
+    "title": "{brand} - منصة SaaS عصرية",
     "description": "بسّط سير عملك مع حل SaaS القوي الذي نقدمه",
-    "imageAlt": "SaasPro"
+    "imageAlt": "{brand}"
   },
   "Common": {
     "getStarted": "ابدأ الآن",
@@ -109,7 +109,7 @@
         },
         "featured": {
           "title": "أحدث ندوة",
-          "description": "تحقيق أقصى إنتاجية مع SaasPro",
+          "description": "تحقيق أقصى إنتاجية مع {brand}",
           "cta": "شاهد الآن"
         }
       }

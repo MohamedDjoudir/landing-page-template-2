@@ -1,8 +1,8 @@
 {
   "Metadata": {
-    "title": "SaasPro - Modern SaaS Platform",
+    "title": "{brand} - Modern SaaS Platform",
     "description": "Streamline your workflow with our powerful SaaS solution",
-    "imageAlt": "SaasPro"
+    "imageAlt": "{brand}"
   },
   "Common": {
     "getStarted": "Get Started",
@@ -109,7 +109,7 @@
         },
         "featured": {
           "title": "Latest Webinar",
-          "description": "Maximizing Productivity with SaasPro",
+          "description": "Maximizing Productivity with {brand}",
           "cta": "Watch Now"
         }
       }

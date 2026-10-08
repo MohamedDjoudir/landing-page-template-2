@@ -2,7 +2,9 @@ import { Facebook, Github, Instagram, Linkedin, Twitter } from "lucide-react";
 import { siteConfig } from "@/config";
 import type { FooterColumnData, SocialLinkData } from "../types";
 
-export const COPYRIGHT_YEAR = 2024;
+// The year the page is rendered in. The page is prerendered, so it updates with
+// each build.
+export const COPYRIGHT_YEAR = new Date().getFullYear();
 
 export const footerColumns: FooterColumnData[] = [
   {

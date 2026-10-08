@@ -19,10 +19,11 @@ export async function generateMetadata({
 }: LocaleParams): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "Metadata" });
+  const brand = { brand: siteConfig.name };
 
   return {
     metadataBase: new URL(siteConfig.url),
-    title: t("title"),
+    title: t("title", brand),
     description: t("description"),
     generator: siteConfig.creator,
     alternates: {
@@ -32,14 +33,14 @@ export async function generateMetadata({
       ),
     },
     openGraph: {
-      title: t("title"),
+      title: t("title", brand),
       description: t("description"),
       images: [
         {
           url: siteConfig.ogImage,
           width: 1200,
           height: 630,
-          alt: t("imageAlt"),
+          alt: t("imageAlt", brand),
         },
       ],
       type: "website",
@@ -48,7 +49,7 @@ export async function generateMetadata({
     },
     twitter: {
       card: "summary_large_image",
-      title: t("title"),
+      title: t("title", brand),
       description: t("description"),
       images: [siteConfig.ogImage],
     },
@@ -78,7 +79,6 @@ export default async function LocaleLayout({
       <head>
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-        <link rel="manifest" href="/site.webmanifest" />
       </head>
       <body className={font.className}>
         <NextIntlClientProvider>

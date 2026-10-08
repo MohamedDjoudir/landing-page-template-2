@@ -88,7 +88,7 @@ Both are optional. To change one, copy `.env.example` to `.env.local` and edit i
 | Variable                   | Default                 | Purpose |
 | -------------------------- | ----------------------- | ------- |
 | `NEXT_PUBLIC_SITE_URL`     | `http://localhost:3030` | The public address of the site. The canonical link and the social sharing cards are built from it. Set it to your domain before you go live. |
-| `NEXT_PUBLIC_API_BASE_URL` | empty                   | An API that receives newsletter sign-ups. The form posts `{ "email": string }` to `${NEXT_PUBLIC_API_BASE_URL}/newsletter/subscribe`. When it is empty, the form sends nothing and shows its error message. |
+| `NEXT_PUBLIC_API_BASE_URL` | empty                   | An API that receives newsletter sign-ups. Only the newsletter section uses it, and that section is not on the page by default (see [The newsletter section](#the-newsletter-section)). |
 
 ---
 
@@ -96,17 +96,25 @@ Both are optional. To change one, copy `.env.example` to `.env.local` and edit i
 
 | To change | Edit |
 | --------- | ---- |
-| Brand name (logo and page text) | `name` in `src/config/site.ts` |
+| Brand name (logo, page text, page title, web app manifest) | `name` in `src/config/site.ts`. The messages files read it as `{brand}`. |
 | Social links in the footer | `links` in `src/config/site.ts` |
 | Any text on the page, the page title and description | `messages/en.json` and `messages/ar.json` |
 | Hero image, favicons, social sharing image | `public/` (`public/images/hero.webp`, `public/favicon.svg`, `public/image.png`) |
-| Testimonial photos, company and integration logos | The `constants/` folder of each section under `src/features/home/` |
+| Testimonial photos, blog card images, company and integration logos | The `constants/` folder of each section under `src/features/home/` |
 | Prices and plan features | `src/features/home/Pricing/constants/plans.ts` and `src/features/home/ComparisonTable/constants/` |
-| Theme colours | The CSS variables in `src/styles/globals.css`. The purple and pink accents are Tailwind classes (`purple-*`, `pink-*`) in the components. |
-| Fonts | `src/lib/fonts.ts` (Inter for English, Noto Sans Arabic for Arabic) |
+| Colours | Mostly Tailwind classes in the components: the page background is `bg-gray-950` in `src/app/[locale]/page.tsx`, and the sections use `gray-*`, `purple-*` and `pink-*`. The CSS variables in `src/styles/globals.css` drive only the shared `Button` and `Input`. |
+| Fonts | `src/lib/fonts.ts` (Inter for English, Noto Sans Arabic for Arabic). `src/app/[locale]/layout.tsx` picks the font per language. |
 | Which sections appear, and their order | `src/app/[locale]/page.tsx` |
 
-The company and integration logos are SVG files in `public/images/logos/`. The testimonial photos load from `images.unsplash.com`, so they need an internet connection. To serve your own, put the files in `public/` and use paths such as `/images/your-photo.jpg`.
+The company and integration logos are SVG files in `public/images/logos/`. The testimonial photos and the blog card images load from `images.unsplash.com`, so they need an internet connection. To serve your own, put the files in `public/` and use paths such as `/images/your-photo.jpg`.
+
+### The newsletter section
+
+The template includes a newsletter section (`src/features/home/Newsletter/`), but it is not on the page. To show it:
+
+1. In `src/app/[locale]/page.tsx`, add `Newsletter` to the import from `@/features/home`, and place `<Newsletter />` where you want it, for example before `<Cta />`.
+2. Set `NEXT_PUBLIC_API_BASE_URL` to your API, then rebuild. The form posts `{ "email": string }` to `${NEXT_PUBLIC_API_BASE_URL}/newsletter/subscribe`. Without it, the form sends nothing and shows its error message.
+3. The request goes from the visitor's browser to your API, so the API must allow your site's address in its CORS settings.
 
 ---
 
@@ -118,7 +126,13 @@ The page ships in English (`en`, the default) and Arabic (`ar`). Every address s
 - `src/i18n/` holds the routing (`routing.ts`), the request config (`request.ts`), the navigation helpers and the text direction helper.
 - `src/middleware.ts` picks the language for a visitor.
 
-To add a language, add it to `locales` in `src/i18n/routing.ts`, add `messages/<locale>.json`, and add its name under `LocaleSwitcher.names` in every messages file.
+To add a language:
+
+1. Add it to `locales` in `src/i18n/routing.ts`.
+2. Add `messages/<locale>.json` with the same keys as `messages/en.json`.
+3. Add its name under `LocaleSwitcher.names` in every messages file.
+4. If it is written right to left, add it to `RTL_LOCALES` in `src/i18n/direction.ts`.
+5. If it needs a non-Latin font, add the font in `src/lib/fonts.ts` and choose it in `src/app/[locale]/layout.tsx`. The layout uses Noto Sans Arabic only for `ar` and Inter for every other language.
 
 ---
 
@@ -126,8 +140,9 @@ To add a language, add it to `locales` in `src/i18n/routing.ts`, add `messages/<
 
 ```
 messages/                 en.json, ar.json
-public/                   Images, favicons, web manifest
+public/                   Images, logos, favicons
 src/
+├── app/manifest.ts       The web app manifest, built from src/config/site.ts
 ├── app/[locale]/         layout.tsx (html, providers, metadata) and page.tsx (the page)
 ├── components/           Shared UI: ui/, backgrounds/, Logo, SectionHeader, LocaleSwitcher
 ├── config/               Site constants (name, URL, social links)
@@ -156,7 +171,7 @@ src/
 
 ## Styling
 
-Tailwind CSS, with the theme tokens as CSS variables in `src/styles/globals.css`. The page renders in dark mode. The layouts use logical utilities (`ms-*`, `pe-*`, `start-*`, `text-start`) so they mirror in Arabic.
+Tailwind CSS. The page always renders dark, with its colours set by Tailwind classes in the components. The CSS variables in `src/styles/globals.css` are used by the shared `Button` and `Input` only. The layouts use logical utilities (`ms-*`, `pe-*`, `start-*`, `text-start`) so they mirror in Arabic.
 
 ---
 
