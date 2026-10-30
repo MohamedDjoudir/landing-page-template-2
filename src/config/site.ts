@@ -4,7 +4,7 @@ export const siteConfig = {
   // Graph URLs are built from it.
   url: process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3030",
   ogImage: "/image.png",
-  creator: "Mohamed Djoudir",
+  creator: "Aniq-UI",
   links: {
     twitter: "#",
     facebook: "#",
